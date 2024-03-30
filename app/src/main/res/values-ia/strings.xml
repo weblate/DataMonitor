@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_widget">Adder widget</string>
+    <string name="home_mobile_data_sent">%1$s
+\nInviate</string>
+    <string name="app_name_placeholder">Nomine del application</string>
+    <string name="label_sent">inviate</string>
+    <string name="action_cancel">Cancellar</string>
+    <string name="action_ok">OK</string>
+    <string name="title_app_data_usage_session">Seliger le session</string>
+    <string name="label_today">Hodie</string>
+    <string name="label_this_month">Iste mense</string>
+    <string name="label_this_year">Iste anno</string>
+    <string name="title_app_data_usage_type">Seliger le typo</string>
+    <string name="action_update">Actualisar</string>
+    <string name="label_dev">Facite con ❤ per Bitroid</string>
+    <string name="daily">Quotidian</string>
+    <string name="option_5_min">5 minutas</string>
+    <string name="option_10_min">10 minutas</string>
+    <string name="option_15_min">15 minutas</string>
+    <string name="appwidget_text">Exemplo</string>
+    <string name="label_yesterday">Heri</string>
+    <string name="label_last_month">Ultime mense</string>
+    <string name="label_all_time">Omne tempore</string>
+    <string name="label_wifi">Wi-Fi</string>
+    <string name="data_remaining_placeholder">0.00 GB remanente</string>
+    <string name="label_loading_apps">Cargamento del applicationes</string>
+    <string name="label_loading">Cargante…</string>
+    <string name="label_app_data_usage_session_empty">Nulle datos disponibile</string>
+</resources>
