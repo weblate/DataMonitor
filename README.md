@@ -62,6 +62,9 @@ Join the Beta program on:<br>
 <a href="https://play.google.com/apps/testing/com.drnoob.datamonitor">Web</a><br>
 Latest Beta: <a href="https://github.com/itsdrnoob/DataMonitor/tree/dev/2.4.0">v2.4.0-Beta2</a>
 
+## Roadmap
+Checkout upcoming feautures and enhancements to the project in the [Project Roadmap.](ROADMAP.md)
+
 ## License
 Check app license <a href = "LICENSE">here</a>
 
