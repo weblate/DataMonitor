@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">"Data Monitor"</string>
-    <string name="appwidget_text">"EXEMPLO"</string>
+    <string name="appwidget_text">Exemplo</string>
     <string name="add_widget">"Adicionar widget"</string>
     <string name="notification_mobile_data_usage">"Dados móveis: %1$s"</string>
     <string name="notification_wifi_data_usage">"Wifi: %1$s"</string>
@@ -19,7 +19,7 @@
     <string name="app_label_package_name">"Nome do pacote: %1$s"</string>
     <string name="app_label_uid">"Uid: %1$d"</string>
     <string name="app_name_placeholder">"Nome do aplicativo"</string>
-    <string name="app_data_usage_placeholder">"00 MB"</string>
+    <string name="app_data_usage_placeholder">0 MB</string>
     <string name="label_sent">"enviado"</string>
     <string name="label_received">"recebido"</string>
     <string name="action_open_app_settings">"Abrir configurações do aplicativo"</string>
@@ -39,15 +39,11 @@
     <string name="action_update">"Atualizar"</string>
     <string name="data_remaining_placeholder">"0.00 GB restante"</string>
     <string name="label_dev">"Feito com ❤ por Bitroid"</string>
-    <string name="label_loading_apps">"Carregando apps"</string>
+    <string name="label_loading_apps">Carregando aplicativos</string>
     <string name="label_app_data_usage_session_empty">"Nenhum dado disponível para a sessão selecionada"</string>
-    <string name="label_want_to_contribute">
-"Quer contribuir para o Data Monitor Clique aqui para saber como."
-</string>
-    <string name="setup_image_footer">
-"Widgets e/ou notificação de podem fornecer acesso fácil à quantidade de dados que você usou"
-</string>
-    <string name="heading_data_reset">"Resetar dados"</string>
+    <string name="label_want_to_contribute">Clique aqui para saber como contribuir com o Data Monitor.</string>
+    <string name="setup_image_footer">Widgets e/ou notificações fornecem acesso fácil à quantidade de dados usados</string>
+    <string name="heading_data_reset">Redefinir contador</string>
     <string name="daily">"Diário"</string>
     <string name="monthly">"Mensalmente"</string>
     <string name="heading_data_limit">"Limite de dados"</string>
@@ -62,15 +58,11 @@
     <string name="option_10_min">"10 minutos"</string>
     <string name="option_15_min">"15 minutos"</string>
     <string name="title_widget_setup">"Configurar Widget"</string>
-    <string name="widget_setup_step_1">
-"1. Na tela inicial, toque e segure em um espaço vazio."
-</string>
+    <string name="widget_setup_step_1">1. Toque e mantenha pressionado um espaço vazio na tela inicial.</string>
     <string name="widget_setup_step_2">"2. Toque em Widgets."</string>
     <string name="widget_setup_step_3">3. Arraste e solte o widget Data Monitor na tela inicial.</string>
     <string name="heading_data_usage_today">"Uso de dados de hoje"</string>
-    <string name="action_add_data_plan_home">
-"Adicione seu plano de dados para iniciar o monitoramento"
-</string>
+    <string name="action_add_data_plan_home">Adicione seu plano de dados para começar a monitorá-lo</string>
     <string name="heading_week_overview">"Visão geral desta semana"</string>
     <string name="error_loading_overview">Não foi possível carregar a visão geral desta semana.
 \nTente novamente mais tarde.</string>
@@ -83,18 +75,14 @@
     <string name="refresh_interval_placeholder">"1 minuto"</string>
     <string name="setup_show_remaining_data">"Mostrar informações de dados restantes"</string>
     <string name="setup_refresh_widget">"Atualizar widget"</string>
-    <string name="refresh_widget_summary">
-"Atualize o widget se estiver enfrentando algum problema"
-</string>
+    <string name="refresh_widget_summary">Atualize o widget se ele estiver enfrentando algum problema</string>
     <string name="setup_notification_title">"Notificação"</string>
     <string name="setup_notification_refresh_interval">"Intervalo de atualização da notificação"</string>
     <string name="setup_show_mobile_usage">"Mostrar uso de dados móveis"</string>
     <string name="setup_show_wifi_usage">"Mostrar uso de wifi"</string>
     <string name="monitor_data">"Uso de dados do Monitor"</string>
     <string name="setup_data_alert">"Alerta de uso de dados"</string>
-    <string name="data_alert_summary">
-"Notificá-lo quando o limite de dados for atingido"
-</string>
+    <string name="data_alert_summary">Notificá-lo quando o limite de dados for atingido</string>
     <string name="settings_general">"Geral"</string>
     <string name="setup_add_data_plan">"Adicionar plano de dados"</string>
     <string name="add_data_plan_summary">"Adicione ou atualize seu plano de dados"</string>
@@ -111,7 +99,7 @@
     <string name="dark_mode_summary">"Ativar o modo escuro"</string>
     <string name="settings_preferences">"Preferências"</string>
     <string name="settings_language">"Idioma"</string>
-    <string name="language_summary">"Mude o idioma do app"</string>
+    <string name="language_summary">Mude o idioma do aplicativo</string>
     <string name="about">"Sobre"</string>
     <string name="about_summary">
 <![CDATA[ Fonte, Ajuda e mais ]]>
@@ -133,45 +121,33 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="report">"Relatar bugs"</string>
     <string name="report_summary">"Relate bugs ou solicite um novo recurso"</string>
     <string name="setup">"Configurar"</string>
-    <string name="app_data_usage">"Uso de dados do app"</string>
+    <string name="app_data_usage">Uso de dados do aplicativo</string>
     <string name="settings">"Configurações"</string>
-    <string name="btc_address_copied">
-"O endereço da carteira Bitcoin foi copiado para sua área de transferência"
-</string>
-    <string name="eth_address_copied">
-"O endereço da carteira Ethereum foi copiado para sua área de transferência"
-</string>
-    <string name="ltc_address_copied">
-"O endereço da carteira Litecoin foi copiado para sua área de transferência"
-</string>
-    <string name="label_system_apps">"Apps do sistema"</string>
+    <string name="btc_address_copied">Endereço da carteira de Bitcoin copiado para a área de transferência</string>
+    <string name="eth_address_copied">Endereço da carteira Ethereum copiado para a área de transferência</string>
+    <string name="ltc_address_copied">Endereço da carteira de Litecoin copiado para a área de transferência</string>
+    <string name="label_system_apps">Aplicativos do Sistema</string>
     <string name="home">"Casa"</string>
     <string name="usage_access_permission">"Permissão de acesso ao uso"</string>
     <string name="usage_access_body">Necessário para executar o aplicativo, uma vez que ele coleta estatísticas de uso do aplicativo.
 \nNenhum dado pessoal é coletado.</string>
     <string name="action_grant">"Conceder permissão"</string>
     <string name="label_tethering">"Hotspot móvel"</string>
-    <string name="label_removed">"Apps removidos"</string>
+    <string name="label_removed">Aplicativos removidos</string>
     <string name="oem_skin_warning">%1$s Verifique as dicas extras de otimização para garantir que o aplicativo funcione corretamente.</string>
     <string name="oem_skin_miui">MIUI detectado.</string>
     <string name="battery_optimisation_disabled">"Otimização da bateria desativada"</string>
     <string name="data_plan_saved">"Plano de dados salvo"</string>
-    <string name="upi_app_not_found">
-"Nenhum aplicativo encontrado para lidar com esta solicitação"
-</string>
+    <string name="upi_app_not_found">Instale um aplicativo que possa fazer isso primeiro</string>
     <string name="upi_unknown_error">Erro desconhecido.
 \nTente novamente ou outro método.</string>
-    <string name="label_no_additional_lang">
-"Mais idiomas em breve.. Ajude-nos? Clique para saber como."
-</string>
+    <string name="label_no_additional_lang">Clique aqui para ajudar a traduzir o aplicativo.</string>
     <string name="notification_disabled">"Notificação do Data monitor desativada"</string>
     <string name="label_widget_refresh_interval_change">"O widget será atualizado a cada %1$s"</string>
     <string name="label_notification_refresh_interval_change">"A notificação será atualizada a cada %1$s"</string>
     <string name="remaining_data_info_enabled">"Informações de dados restantes ativadas"</string>
     <string name="remaining_data_info_disabled">"Informações de dados restantes desativadas"</string>
-    <string name="label_monitoring_no_plan">
-"Adicione um plano de dados para iniciar o monitoramento"
-</string>
+    <string name="label_monitoring_no_plan">Adicione um plano de dados para iniciar o monitoramento</string>
     <string name="label_widget_refreshed">"O widget foi atualizado"</string>
     <string name="label_notification_enabled">"Notificação do Data monitor ativada"</string>
     <string name="label_notification_cannot_disable_both">"Não é possível desativar ambos os elementos"</string>
@@ -235,17 +211,11 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="app_label_background_time">"Uso em segundo plano: %1$s"</string>
     <string name="label_loading">Carregando…</string>
     <string name="donate_summary">"Pague-nos um café, talvez?"</string>
-    <string name="label_data_usage_reset_time_change">
-"O uso de dados será redefinido a cada %1$s em %2$s"
-</string>
-    <string name="label_data_usage_reset_date_change">
-"O uso de dados será redefinido em %1$s de cada mês"
-</string>
+    <string name="label_data_usage_reset_time_change">Redefinir o uso de dados a cada %1$s em %2$s</string>
+    <string name="label_data_usage_reset_date_change">O uso de dados será redefinido em %1$s de cada mês</string>
     <string name="ygorigor_summary">"Tradutor romeno"</string>
     <string name="johnsonran_summary">"Tradutor chinês simplificado"</string>
-    <string name="label_want_to_contribute_language">
-"Não consegue encontrar seu idioma? Ajude-nos traduzindo o conteúdo para o seu idioma local. Clique para saber como."
-</string>
+    <string name="label_want_to_contribute_language">Clique aqui para ajudar a traduzir o aplicativo para seu idioma.</string>
     <string name="current_language">"Idioma atual"</string>
     <string name="available_languages">"Idiomas disponíveis"</string>
     <string name="label_reset_every_month">"%1$s de cada mês"</string>
@@ -261,13 +231,9 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="label_network_signal_notification_disabled">"Velocidade de rede ao vivo desativada"</string>
     <string name="network_signal_summary">"Recurso beta"</string>
     <string name="read_phone_state_permission">"Permissão de ler estado do telefone"</string>
-    <string name="read_phone_state_body">
-"Dispositivos que executam o Android 9 e inferior precisam conceder a permissão 'Ler estado do telefone' manualmente. Nenhum dado pessoal será coletado ou armazenado."
-</string>
+    <string name="read_phone_state_body">Os dispositivos com Android versão 9 ou inferior devem conceder essa permissão manualmente. Nenhum dado pessoal será coletado.</string>
     <string name="action_permission_granted">"Permissão garantida"</string>
-    <string name="error_permission_denied">
-"Permissão negada. Por favor, conceda a permissão manualmente."
-</string>
+    <string name="error_permission_denied">Permissão negada. Conceda a permissão manualmente.</string>
     <string name="telegram_support">"Suporte no Telegram"</string>
     <string name="telegram_summary">"Junte-se ao grupo de Suporte do Telegram"</string>
     <string name="rate_app">"Avalie o aplicativo no Google Play"</string>
@@ -314,7 +280,7 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="label_device_info">Informações do dispositivo</string>
     <string name="crash_report_title">Relatório de falha</string>
     <string name="device_info_content_label">Veja o que está incluído nas Informações do dispositivo</string>
-    <string name="label_telegram">Telegrama</string>
+    <string name="label_telegram">Telegram</string>
     <string name="report_github_summary">Abrir uma nova edição no Github</string>
     <string name="report_telegram_summary">Envie o relatório de falha no chat de suporte do Telegram</string>
     <string name="report_mail_summary">Enviar o relatório de falhas por e-mail</string>
@@ -358,4 +324,132 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="action_add_data_plan_home_summary">Nenhum plano de dados encontrado! Adicione um plano de dados para começar a rastreá-lo.</string>
     <string name="label_select_start_date">Selecione a data de início</string>
     <string name="label_plan_end_date">Selecionar data de término</string>
+    <string name="add_custom_session">Adicionar sessão personalizada</string>
+    <string name="action_reset">Redefinir</string>
+    <string name="label_select_date">Selecionar data</string>
+    <string name="action_apply_filter">Aplicar Filtro</string>
+    <string name="label_welcome_header">Bem-vindo ao Data Monitor</string>
+    <string name="combine_notifications">Combinar notificações</string>
+    <string name="combine_notifications_summary">Combine o monitor de dados e a velocidade da rede em uma única notificação.</string>
+    <string name="bluehomewu_summary">Chinês tradicional</string>
+    <string name="wall_of_thanks">Muro de agradecimento</string>
+    <string name="label_select_start_time">Selecione a hora de início</string>
+    <string name="jonnysemon_summary">Árabe</string>
+    <string name="timtcg_summary">Vietnamita</string>
+    <string name="error_data_fetch_failed">Falha ao buscar dados</string>
+    <string name="smart_data_allocation_summary">Aloque seus dados de forma inteligente usando cotas diárias e rolagens de dados.</string>
+    <string name="setup_daily_quota_alert">Alerta diário de cota</string>
+    <string name="daily_quota_alert_title">A cota diária de dados foi atingida!</string>
+    <string name="dan_summary">Ucraniano</string>
+    <string name="app_contributors">Colaboradores do aplicativo</string>
+    <string name="label_thank_you">Obrigado</string>
+    <string name="label_learn_more">Saiba mais</string>
+    <string name="label_plan_details_title_custom">Plano personalizado ativo</string>
+    <string name="label_plan_details_title_daily">Plano diário ativo</string>
+    <string name="label_plan_details_title_unknown">Plano desconhecido ativo</string>
+    <string name="flix_summary">Alemão</string>
+    <string name="ofermar_summary">Hebraico</string>
+    <string name="error_network_monitor_start">Falha ao iniciar o Network Monitor. Abra o aplicativo para atualizar.</string>
+    <string name="home_plan_usage_details">%1$s usado | %2$s</string>
+    <string name="fjuro_summary">Tcheco</string>
+    <string name="croxz900_summary">Turco</string>
+    <string name="ngocanhtve_summary">Vietnamita</string>
+    <string name="label_days_remaining">%1$s dia(s) restantes</string>
+    <string name="combined_notification_icon">Ícone de notificação combinado</string>
+    <string name="combined_notification_icon_summary">Escolha o ícone a ser exibido para a notificação combinada</string>
+    <string name="option_1_sec">Cada segundo</string>
+    <string name="option_15_sec">15 segundos</string>
+    <string name="option_30_sec">30 segundos</string>
+    <string name="lockscreen_notification">Ativar notificação na tela de bloqueio</string>
+    <string name="title_app_picker">Selecionar um aplicativo</string>
+    <string name="app_search_hint">Encontre um aplicativo</string>
+    <string name="label_show_system_apps">Mostrar aplicativos do Sistema</string>
+    <string name="iqb4lsp_summary">Indonésio</string>
+    <string name="shailendramaurya_summary">Hindi, Bhojpuri</string>
+    <string name="Master2050_summary">Chinês tradicional, português, francês, norueguês, espanhol, alemão, romeno, coreano, turco, chinês simplificado, ucraniano, hindi, russo, árabe</string>
+    <string name="bonbonboi_summary">Árabe</string>
+    <string name="atharvshinde_summary">Desenvolvedor</string>
+    <string name="U1M450W_summary">Uzbeque</string>
+    <string name="MarongHappy_summary">Coreano</string>
+    <string name="action_save">Salvar</string>
+    <string name="label_custom_end_time">Hora de término: %1$s</string>
+    <string name="atharvshinde_translation_summary">Marata</string>
+    <string name="hinamechan_summary">Turco</string>
+    <string name="graphixmedia_summary">Holandês</string>
+    <string name="donate_info">O Data Monitor é um aplicativo gratuito e de código aberto e sempre permanecerá assim :)
+\n
+\nSe você quiser apoiar o desenvolvimento do aplicativo, uma doação será muito bem-vinda.</string>
+    <string name="label_paypal">PayPal</string>
+    <string name="error_invalid_plan_duration">Duração do plano inválida</string>
+    <string name="xmr_address_copied">Endereço da carteira Monero copiado para a área de transferência</string>
+    <string name="paypal_summary">Doar via Paypal</string>
+    <string name="buymeacoffee_summary">Compre-me um café :)</string>
+    <string name="label_buymeacoffee">Compre-me um café</string>
+    <string name="upi_summary">Doar via UPI</string>
+    <string name="label_upi">BHIM-UPI</string>
+    <string name="label_data_plan_updated">Plano de dados atualizado!</string>
+    <string name="error_alarm_permission_denied_dialog_summary">O Data Monitor requer a permissão SCHEDULE_EXACT_ALARM para funcionar corretamente. Você ainda pode usar o aplicativo, mas alguns recursos podem não funcionar corretamente.</string>
+    <string name="label_plan_validity">Válido até %1$s | %2$s</string>
+    <string name="always_show_total">Sempre mostra o total</string>
+    <string name="always_show_total_summary">Sempre mostrar o total de dados usados na notificação, independentemente das opções selecionadas.</string>
+    <string name="app_label_combined_total">Uso total de dados: %1$s</string>
+    <string name="tadekdudek_summary">Polonês</string>
+    <string name="daily_quota_alert_summary">Receba um alerta quando sua cota diária for esgotada.</string>
+    <string name="data_plan_updated_summary">Seu novo plano é válido até %1$s</string>
+    <string name="setup_auto_update_data_plan">Atualização automática do plano de dados</string>
+    <string name="auto_update_data_plan_summary">Atualize automaticamente seu plano de dados com um plano semelhante.</string>
+    <string name="rintan_summary">Japonês</string>
+    <string name="label_daily_quota">Cota diária: %1$s</string>
+    <string name="daily_quota_alert_body">Você esgotou sua cota diária de dados.</string>
+    <string name="action_add_application">Adicionar Aplicativo</string>
+    <string name="label_no_apps_added">Nenhum aplicativo adicionado. Clique no botão abaixo para adicionar um aplicativo.</string>
+    <string name="exclude_apps">Excluir aplicativos</string>
+    <string name="exclude_apps_summary">Excluir o tráfego de aplicativos do uso de dados</string>
+    <string name="label_hide_system_apps">Ocultar aplicativos do Sistema</string>
+    <string name="error_unknown">Ocorreu um erro desconhecido. Tente novamente.</string>
+    <string name="action_delete">Excluir</string>
+    <string name="title_remove_apps">Remover aplicativos selecionados?</string>
+    <string name="app_already_present">O aplicativo já está predefinido na lista.</string>
+    <string name="save_results_summary">Salvar os resultados do diagnóstico de rede</string>
+    <string name="title_delete_results">Excluir resultados selecionados?</string>
+    <string name="action_select_all">Selecionar tudo</string>
+    <string name="label_do_not_show_again">Não mostrar novamente</string>
+    <string name="Atalanttore_summary">Alemão</string>
+    <string name="gallegonovato_summary">Espanhol</string>
+    <string name="Kefir2105_summary">Ucraniano</string>
+    <string name="rex07_summary">Árabe</string>
+    <string name="label_all_donors">Todos os doadores</string>
+    <string name="wall_of_thanks_body">O Data Monitor percorreu um longo caminho desde sua criação e não teria sido possível sem o apoio de nossos generosos doadores.</string>
+    <string name="label_top_donors">Principais doadores</string>
+    <string name="setup_smart_data_allocation">Alocação inteligente de dados</string>
+    <string name="app_contributors_summary">Uma lista de colaboradores que apoiam o desenvolvimento do aplicativo.</string>
+    <string name="rezaalmanda_summary">Indonésio</string>
+    <string name="gnu_ewm_summary">Polonês</string>
+    <string name="error_combine_notifications_enabled">Notificação combinada ativada. Não é possível desativar a notificação individual.</string>
+    <string name="label_welcome_body">Acompanhe todo o seu uso de dados - em um só lugar</string>
+    <string name="get_started">Comece a usar</string>
+    <string name="add_time">Adicionar tempo</string>
+    <string name="skip_setup">Pular configuração</string>
+    <string name="diagnostics_history">Histórico de Diagnósticos</string>
+    <string name="settings_save_results">Salvar resultados</string>
+    <string name="error_alarm_permission_denied">Permissão de alarme negada!</string>
+    <string name="error_alarm_permission_denied_summary">Você tentou executar uma ação que requer a permissão SCHEDULE_EXACT_ALARM, que não foi concedida ao aplicativo. Clique aqui para conceder a permissão.</string>
+    <string name="error_alarm_permission_denied_feature_summary">Você não pode usar esse recurso sem conceder a permissão SCHEDULE_EXACT_ALARM.</string>
+    <string name="label_plan_details_title_monthly">Plano mensal ativo</string>
+    <string name="buttercookie42_summary">Desenvolvedor</string>
+    <string name="label_select_end_time">Selecione a hora final</string>
+    <string name="error_invalid_session">Duração de sessão inválida.</string>
+    <string name="date">Data</string>
+    <string name="time">Hora</string>
+    <string name="wall_of_thanks_summary">Um lugar para demonstrar nossa gratidão aos apoiadores do aplicativo.</string>
+    <string name="label_current_plan">Plano atual</string>
+    <string name="label_filter_app_usage">Filtrar o uso do aplicativo</string>
+    <string name="xxx_summary">Russo</string>
+    <string name="chin_housin_summary">Chinês simplificado</string>
+    <string name="ecogaming_summary">Desenvolvedor</string>
+    <string name="detrimental_god_summary">Malaiala</string>
+    <string name="zahiruddinrushdi_summary">Malaio</string>
+    <string name="label_custom_start_time">Hora de início: %1$s</string>
+    <string name="label_filter">Filtro</string>
+    <string name="jean_mareilles_summary">Francês</string>
 </resources>
