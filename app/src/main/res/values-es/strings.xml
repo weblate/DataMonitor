@@ -30,7 +30,7 @@
     <string name="label_this_year">"Año pasado"</string>
     <string name="label_all_time">"Todo el tiempo"</string>
     <string name="title_app_data_usage_type">"Seleccionar tipo"</string>
-    <string name="label_mobile_data">"Datos mobiles"</string>
+    <string name="label_mobile_data">Datos móviles</string>
     <string name="label_wifi">"Wifi"</string>
     <string name="title_data_usage">"Uso de datos"</string>
     <string name="action_update">"Actualizar"</string>
