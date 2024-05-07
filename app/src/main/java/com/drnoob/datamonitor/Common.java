@@ -22,6 +22,9 @@ package com.drnoob.datamonitor;
 import static android.content.Context.APP_OPS_SERVICE;
 import static com.drnoob.datamonitor.core.Values.ACTION_SHOW_DATA_PLAN_NOTIFICATION;
 import static com.drnoob.datamonitor.core.Values.ALARM_PERMISSION_DENIED;
+import static com.drnoob.datamonitor.core.Values.ALARM_PERMISSION_NOTIFICATION_ID;
+import static com.drnoob.datamonitor.core.Values.DATA_RESET;
+import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_END;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_DATE;
 import static com.drnoob.datamonitor.core.Values.INTENT_ACTION;
@@ -42,6 +45,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -68,7 +72,9 @@ import androidx.core.os.ConfigurationCompat;
 import androidx.preference.PreferenceManager;
 
 import com.drnoob.datamonitor.adapters.data.LanguageModel;
+import com.drnoob.datamonitor.utils.AlarmManagerExt;
 import com.drnoob.datamonitor.utils.CompoundNotification;
+import com.drnoob.datamonitor.utils.DailyQuotaAlertReceiver;
 import com.drnoob.datamonitor.utils.DataPlanRefreshReceiver;
 import com.drnoob.datamonitor.utils.DataUsageMonitor;
 import com.drnoob.datamonitor.utils.LiveNetworkMonitor;
@@ -215,26 +221,53 @@ public class Common {
     }
 
     public static void refreshService(Context context) {
-        if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("combine_notifications", false)) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (preferences.getBoolean("combine_notifications", false)) {
             if (!isCombinedNotificationServiceRunning(context)) {
                 context.startService(new Intent(context, CompoundNotification.class));
             }
         }
         else {
-            if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("network_signal_notification", false)) {
+            if (preferences.getBoolean("network_signal_notification", false)) {
                 if (!isLiveNetworkServiceRunning(context)) {
                     context.startService(new Intent(context, LiveNetworkMonitor.class));
                 }
             }
-            if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("setup_notification", false)) {
+            if (preferences.getBoolean("setup_notification", false)) {
                 if (!isNotificationServiceRunning(context)) {
                     context.startService(new Intent(context, NotificationService.class));
                 }
             }
         }
-        if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("data_usage_alert", false)) {
+
+        if (preferences.getBoolean("data_usage_alert", false)) {
             if (!isDataUsageAlertServiceRunning(context)) {
                 context.startService(new Intent(context, DataUsageMonitor.class));
+            }
+        }
+
+        if (preferences.getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
+            cancelDataPlanNotification(context);
+            if (PreferenceManager.getDefaultSharedPreferences(context)
+                    .getBoolean("auto_update_data_plan", false)) {
+                setRefreshAlarm(context);
+            }
+            else {
+                setDataPlanNotification(context);
+            }
+        }
+
+        if (preferences.getBoolean("daily_quota_alert", false)) {
+            Intent intent = new Intent(context, DailyQuotaAlertReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1000, intent, PendingIntent.FLAG_IMMUTABLE);
+            AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+            if (!AlarmManagerExt.Companion.setExactAndAllowWhileIdleCompat(
+                    alarmManager,
+                    AlarmManager.RTC_WAKEUP,
+                    System.currentTimeMillis() + 2500,
+                    pendingIntent)) {
+                postAlarmPermissionDeniedNotification(context);
             }
         }
 
@@ -253,18 +286,18 @@ public class Common {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1001,
                 intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         if (wakeupMillis > System.currentTimeMillis()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (alarmManager.canScheduleExactAlarms()) {
-                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, wakeupMillis, pendingIntent);
-                } else {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted");
-                    postAlarmPermissionDeniedNotification(context);
-                }
-            } else {
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, wakeupMillis, pendingIntent);
+            if (AlarmManagerExt.Companion.setExactCompat(
+                    alarmManager,
+                    AlarmManager.RTC_WAKEUP,
+                    wakeupMillis,
+                    pendingIntent)) {
+                Log.d(TAG, "setRefreshAlarm: set for: " + wakeupMillis);
             }
-            Log.d(TAG, "setRefreshAlarm: set");
-        } else {
+            else {
+                postAlarmPermissionDeniedNotification(context);
+            }
+        }
+        else {
             Log.e(TAG, "setRefreshAlarm: something is wrong here " + wakeupMillis);
         }
     }
@@ -283,18 +316,18 @@ public class Common {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 1001,
                 intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         if (wakeupMillis > System.currentTimeMillis()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (alarmManager.canScheduleExactAlarms()) {
-                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, wakeupMillis, pendingIntent);
-                } else {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted");
-                    postAlarmPermissionDeniedNotification(context);
-                }
-            } else {
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP, wakeupMillis, pendingIntent);
+            if (AlarmManagerExt.Companion.setExactCompat(
+                    alarmManager,
+                    AlarmManager.RTC_WAKEUP,
+                    wakeupMillis,
+                    pendingIntent)) {
+                Log.d(TAG, "setDataPlanNotification: set");
             }
-            Log.d(TAG, "setDataPlanNotification: set");
-        } else {
+            else {
+                postAlarmPermissionDeniedNotification(context);
+            }
+        }
+        else {
             Log.e(TAG, "setDataPlanNotification: something is wrong here " + wakeupMillis);
         }
     }
@@ -378,8 +411,9 @@ public class Common {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.S)
     public static void postAlarmPermissionDeniedNotification(Context context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return;
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, OTHER_NOTIFICATION_CHANNEL_ID);
         Intent intent = new Intent();
         intent.setAction(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
@@ -394,7 +428,7 @@ public class Common {
                 .setOnlyAlertOnce(true)
                 .setPriority(NotificationCompat.PRIORITY_MAX);
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(context);
-        postNotification(context, managerCompat, builder, OTHER_NOTIFICATION_ID);
+        postNotification(context, managerCompat, builder, ALARM_PERMISSION_NOTIFICATION_ID);
     }
 
     public static String getPlanValidity(int session, Context context) {
