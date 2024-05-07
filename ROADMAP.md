@@ -3,7 +3,7 @@
 | Item | Description | Status | Priority | Reference | Expected release |
 | ---- | ----------- | ------ | -------- | --------- | ---------------- |
 | Notification visibility issues in OneUi | Fix the disappearing of layout when using combined notification in OneUi devices. | Todo | High | [#186](https://github.com/itsdrnoob/DataMonitor/issues/186) | v2.5.0 |
-| Non-renewal of custom plan after reboot | Fix custom plan renewal alarm being removed on device reboot. | WIP | High | [#227](https://github.com/itsdrnoob/DataMonitor/issues/227) | v2.5.0 |
+| Non-renewal of custom plan after reboot | Fix custom plan renewal alarm being removed on device reboot. | Done | High | [#227](https://github.com/itsdrnoob/DataMonitor/issues/227) | v2.5.0 |
 | Refresh the notification layout | Revamp notification layout to be concise and provide clearer details at a glance. | Todo | Medium | [#204](https://github.com/itsdrnoob/DataMonitor/issues/204) | N/A |
 | Accessibility features for the color vision impaired | Improve accessibility for users with color vision impairment including label/background colors and gradients. | Todo | Medium | [#197](https://github.com/itsdrnoob/DataMonitor/issues/197), [#198](https://github.com/itsdrnoob/DataMonitor/issues/198) | N/A |
 | Widget improvements | Improve the flexibility and scaling of the widget. | Todo | Medium | [#168](https://github.com/itsdrnoob/DataMonitor/issues/168), [#191](https://github.com/itsdrnoob/DataMonitor/issues/191), [#216](https://github.com/itsdrnoob/DataMonitor/issues/216) | N/A |
