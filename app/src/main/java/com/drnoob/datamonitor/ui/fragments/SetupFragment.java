@@ -22,6 +22,7 @@ package com.drnoob.datamonitor.ui.fragments;
 import static com.drnoob.datamonitor.Common.cancelDataPlanNotification;
 import static com.drnoob.datamonitor.Common.dismissOnClick;
 import static com.drnoob.datamonitor.Common.formatOrdinalNumber;
+import static com.drnoob.datamonitor.Common.postAlarmPermissionDeniedNotification;
 import static com.drnoob.datamonitor.Common.postNotification;
 import static com.drnoob.datamonitor.Common.setDataPlanNotification;
 import static com.drnoob.datamonitor.Common.setRefreshAlarm;
@@ -101,6 +102,7 @@ import com.drnoob.datamonitor.core.base.Preference;
 import com.drnoob.datamonitor.core.base.SwitchPreferenceCompat;
 import com.drnoob.datamonitor.ui.activities.ContainerActivity;
 import com.drnoob.datamonitor.ui.activities.MainActivity;
+import com.drnoob.datamonitor.utils.AlarmManagerExt;
 import com.drnoob.datamonitor.utils.CompoundNotification;
 import com.drnoob.datamonitor.utils.DailyQuotaAlertReceiver;
 import com.drnoob.datamonitor.utils.DataUsageMonitor;
@@ -1630,11 +1632,11 @@ public class SetupFragment extends Fragment {
                         PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 1000, intent, PendingIntent.FLAG_IMMUTABLE);
                         AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
                         if (isChecked) {
-                            alarmManager.setExactAndAllowWhileIdle(
-                                    AlarmManager.RTC_WAKEUP,
-                                    System.currentTimeMillis(),
-                                    pendingIntent
-                            );
+                            if (!AlarmManagerExt.Companion.setExactAndAllowWhileIdleCompat(alarmManager, AlarmManager.RTC_WAKEUP,
+                                    System.currentTimeMillis(), pendingIntent)) {
+                                mDailyQuotaAlert.setChecked(false);
+                                showAlarmPermissionDeniedDialog(getContext());
+                            }
                         }
                         else {
                             alarmManager.cancel(pendingIntent);

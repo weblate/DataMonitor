@@ -19,6 +19,7 @@
 
 package com.drnoob.datamonitor.utils;
 
+import static com.drnoob.datamonitor.Common.postAlarmPermissionDeniedNotification;
 import static com.drnoob.datamonitor.Common.postNotification;
 import static com.drnoob.datamonitor.core.Values.DATA_LIMIT;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET;
@@ -87,17 +88,12 @@ public class DataUsageMonitor extends Service {
             AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
             Intent intent = new Intent(this, DataMonitor.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT|PendingIntent.FLAG_IMMUTABLE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (manager.canScheduleExactAlarms()) {
-                    manager.setExact(AlarmManager.RTC, System.currentTimeMillis(), pendingIntent);
-                }
-                else  {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted" );
-                    Common.postAlarmPermissionDeniedNotification(this);
-                }
-            }
-            else {
-                manager.setExact(AlarmManager.RTC, System.currentTimeMillis(), pendingIntent);
+            if (!AlarmManagerExt.Companion.setExactCompat(
+                    manager,
+                    AlarmManager.RTC,
+                    System.currentTimeMillis(),
+                    pendingIntent)) {
+                postAlarmPermissionDeniedNotification(this);
             }
         }
         else {
@@ -257,17 +253,13 @@ public class DataUsageMonitor extends Service {
                 AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
 //            int elapsedTime = PreferenceManager.getDefaultSharedPreferences(context)
 //                    .getInt(NOTIFICATION_REFRESH_INTERVAL, 6000);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                    if (alarmManager.canScheduleExactAlarms()) {
-                        alarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis() + 30000, pendingIntent);
-                    }
-                    else  {
-                        Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted" );
-                        Common.postAlarmPermissionDeniedNotification(context);
-                    }
-                }
-                else {
-                    alarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis() + 30000, pendingIntent);
+
+                if (!AlarmManagerExt.Companion.setExactCompat(
+                        alarmManager,
+                        AlarmManager.RTC,
+                        System.currentTimeMillis() + 30000,
+                        pendingIntent)) {
+                    postAlarmPermissionDeniedNotification(context);
                 }
             }
             else {
@@ -383,17 +375,12 @@ public class DataUsageMonitor extends Service {
             PendingIntent pendingIntent = PendingIntent.getService(context, 0,
                     restartIntent, PendingIntent.FLAG_ONE_SHOT|PendingIntent.FLAG_IMMUTABLE);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (manager.canScheduleExactAlarms()) {
-                    manager.setExact(AlarmManager.RTC, endTimeMillis, pendingIntent);
-                }
-                else  {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted" );
-                    Common.postAlarmPermissionDeniedNotification(context);
-                }
-            }
-            else {
-                manager.setExact(AlarmManager.RTC, endTimeMillis, pendingIntent);
+            if (!AlarmManagerExt.Companion.setExactCompat(
+                    manager,
+                    AlarmManager.RTC,
+                    endTimeMillis,
+                    pendingIntent)) {
+                postAlarmPermissionDeniedNotification(context);
             }
             Log.d(TAG, "restartMonitor: Restart at: " + endTimeMillis);
         }

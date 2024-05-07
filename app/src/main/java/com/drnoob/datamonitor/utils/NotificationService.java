@@ -19,6 +19,7 @@
 
 package com.drnoob.datamonitor.utils;
 
+import static com.drnoob.datamonitor.Common.postAlarmPermissionDeniedNotification;
 import static com.drnoob.datamonitor.Common.postNotification;
 import static com.drnoob.datamonitor.core.Values.DATA_LIMIT;
 import static com.drnoob.datamonitor.core.Values.DATA_USAGE_NOTIFICATION_CHANNEL_ID;
@@ -128,17 +129,12 @@ public class NotificationService extends Service {
                 e.printStackTrace();
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (mAlarmManager.canScheduleExactAlarms()) {
-                    mAlarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis(), mUpdaterPendingIntent);
-                }
-                else  {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted" );
-                    Common.postAlarmPermissionDeniedNotification(this);
-                }
-            }
-            else {
-                mAlarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis(), mUpdaterPendingIntent);
+            if (!AlarmManagerExt.Companion.setExactCompat(
+                    mAlarmManager,
+                    AlarmManager.RTC,
+                    System.currentTimeMillis(),
+                    mUpdaterPendingIntent)) {
+                postAlarmPermissionDeniedNotification(this);
             }
         }
         else {
@@ -320,17 +316,12 @@ public class NotificationService extends Service {
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
             int elapsedTime = PreferenceManager.getDefaultSharedPreferences(context)
                     .getInt(NOTIFICATION_REFRESH_INTERVAL, 60000);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (alarmManager.canScheduleExactAlarms()) {
-                    alarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis() + elapsedTime, pi);
-                }
-                else  {
-                    Log.e(TAG, "setRefreshAlarm: permission SCHEDULE_EXACT_ALARM not granted" );
-                    Common.postAlarmPermissionDeniedNotification(context);
-                }
-            }
-            else {
-                alarmManager.setExact(AlarmManager.RTC, System.currentTimeMillis() + elapsedTime, pi);
+            if (!AlarmManagerExt.Companion.setExactCompat(
+                    alarmManager,
+                    AlarmManager.RTC,
+                    System.currentTimeMillis() + elapsedTime,
+                    pi)) {
+                postAlarmPermissionDeniedNotification(context);
             }
         }
     }
