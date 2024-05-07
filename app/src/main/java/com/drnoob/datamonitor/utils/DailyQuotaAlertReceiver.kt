@@ -29,6 +29,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.preference.PreferenceManager
+import com.drnoob.datamonitor.Common
 import com.drnoob.datamonitor.Common.postAlarmPermissionDeniedNotification
 import com.drnoob.datamonitor.Common.postNotification
 import com.drnoob.datamonitor.R
@@ -38,6 +39,7 @@ import com.drnoob.datamonitor.core.Values.DATA_QUOTA_WARNING_SHOWN
 import com.drnoob.datamonitor.core.Values.DATA_USAGE_WARNING_CHANNEL_ID
 import com.drnoob.datamonitor.core.Values.DATA_USAGE_WARNING_NOTIFICATION_ID
 import com.drnoob.datamonitor.core.Values.SESSION_TODAY
+import com.drnoob.datamonitor.utils.AlarmManagerExt.Companion.setExactAndAllowWhileIdleCompat
 import com.drnoob.datamonitor.utils.NetworkStatsHelper.getDeviceMobileDataUsage
 import java.util.Calendar
 import kotlin.math.round
@@ -57,6 +59,7 @@ class DailyQuotaAlertReceiver: BroadcastReceiver() {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         if (preference.getBoolean(DATA_QUOTA_WARNING_SHOWN, false)) {
             this.abortBroadcast
+            Log.d(TAG, "onReceive: alert already shown!")
             alarmManager.cancel(pendingIntent)
         }
         else {
@@ -71,15 +74,19 @@ class DailyQuotaAlertReceiver: BroadcastReceiver() {
 
                     val resetIntent = Intent(context, ResetDataQuotaAlert::class.java)
                     val resetPendingIntent = PendingIntent.getBroadcast(context, 69, resetIntent, PendingIntent.FLAG_IMMUTABLE)
-                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerMillis, resetPendingIntent)
-                    Log.d(TAG, "onReceive: reset alarm set for: $triggerMillis")
+                    if (alarmManager.setExactAndAllowWhileIdleCompat(AlarmManager.RTC_WAKEUP, triggerMillis, resetPendingIntent)) {
+                        Log.d(TAG, "onReceive: reset alarm set for: $triggerMillis")
+                    }
+                    else {
+                        Log.e(TAG, "onReceive: Failed to set alarm, SCHEDULE_EXACT_ALARM permission denied.")
+                        postAlarmPermissionDeniedNotification(context)
+                    }
                 }
                 else {
-                    alarmManager.setExactAndAllowWhileIdle(
-                        AlarmManager.RTC_WAKEUP,
-                        System.currentTimeMillis() + 60000,
-                        pendingIntent
-                    )
+                    if (!alarmManager.setExactAndAllowWhileIdleCompat(AlarmManager.RTC_WAKEUP,
+                            System.currentTimeMillis() + 60000, pendingIntent)) {
+                        postAlarmPermissionDeniedNotification(context)
+                    }
                 }
             }
         }
