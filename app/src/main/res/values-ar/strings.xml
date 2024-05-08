@@ -388,7 +388,7 @@
     <string name="xmr_address_copied">تم نسخ عنوان محفظة مونيرو إلى الحافظة</string>
     <string name="tadekdudek">تاديكدوديك</string>
     <string name="tadekdudek_summary">بولندي</string>
-    <string name="error_alarm_permission_denied_summary">لقد حاولت تنفيذ إجراء يتطلب إذن SCHEDULE_EXACT_ALARM، والذي لم يتم منحه للتطبيق. انقر هنا لمنح الإذن.</string>
+    <string name="error_alarm_permission_denied_summary">لقد حاولت تنفيذ إجراء يتطلب إذن التنبيهات والتذكيرات، وهو ما لم يتم منحه للتطبيق. انقر هنا لمنح الإذن.</string>
     <string name="error_network_monitor_start">فشل بدء تشغيل \"مراقبة الشبكة\". افتح التطبيق للتحديث.</string>
     <string name="label_filter_app_usage">تصفية استخدام التطبيق</string>
     <string name="label_current_plan">الخطة الحالية</string>
@@ -399,8 +399,8 @@
     <string name="app_label_combined_total">إجمالي استهلاك البيانات: %1$s</string>
     <string name="always_show_total_summary">اعرض دائما إجمالي البيانات المستهلكة في الإشعار بغض النظر عن الخيارات المحددة.</string>
     <string name="error_alarm_permission_denied">تم رفض إذن التنبيه!</string>
-    <string name="error_alarm_permission_denied_feature_summary">لا يمكنك استخدام هذه الميزة دون منح إذن SCHEDULE_EXACT_ALARM.</string>
-    <string name="error_alarm_permission_denied_dialog_summary">يتطلب مراقب البيانات إذنا SCHEDULE_EXACT_ALARM للعمل بشكل صحيح. لا يزال بإمكانك استخدام التطبيق، ولكن قد لا تعمل بعض الميزات بشكل صحيح.</string>
+    <string name="error_alarm_permission_denied_feature_summary">لا يمكنك استخدام هذه الميزة دون منح إذن التنبيهات والتذكيرات.</string>
+    <string name="error_alarm_permission_denied_dialog_summary">يتطلب مراقب البيانات إذن الإنذارات والتذكيرات للعمل بشكل صحيح. لا يزال بإمكانك استخدام التطبيق، ولكن قد لا تعمل بعض الميزات بشكل صحيح.</string>
     <string name="label_do_not_show_again">لا تظهر مرة أخرى</string>
     <string name="fjuro">فجورو</string>
     <string name="fjuro_summary">التشيكيّة</string>
