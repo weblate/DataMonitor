@@ -393,11 +393,11 @@
     <string name="label_filter">Filtr</string>
     <string name="label_current_plan">Aktuální plán</string>
     <string name="always_show_total">Vždy zobrazit celkové využití</string>
-    <string name="error_alarm_permission_denied_summary">Pokusili jste se provést akci, která vyžaduje oprávnění SCHEDULE_EXACT_ALARM, které není aplikaci uděleno. Klepnutím sem toto oprávnění udělíte.</string>
+    <string name="error_alarm_permission_denied_summary">Pokusili jste se provést akci, která vyžaduje oprávnění k nastavování budíků a připomenutí, které není aplikaci uděleno. Klepnutím sem toto oprávnění udělíte.</string>
     <string name="app_label_combined_total">Celkové využití dat: %1$s</string>
     <string name="error_alarm_permission_denied">Povolení k poplachu zamítnuto!</string>
-    <string name="error_alarm_permission_denied_dialog_summary">Nástroj Data Monitor vyžaduje pro správnou funkci oprávnění SCHEDULE_EXACT_ALARM. Aplikaci můžete používat i nadále, ale některé funkce nemusí fungovat správně.</string>
-    <string name="error_alarm_permission_denied_feature_summary">Tuto funkci nelze použít bez udělení oprávnění SCHEDULE_EXACT_ALARM.</string>
+    <string name="error_alarm_permission_denied_dialog_summary">Nástroj Data Monitor vyžaduje pro správnou funkci oprávnění k nastavování budíků a připomenutí. Aplikaci můžete používat i nadále, ale některé funkce nemusí fungovat správně.</string>
+    <string name="error_alarm_permission_denied_feature_summary">Tuto funkci nelze použít bez udělení oprávnění k nastavování budíků a připomenutí.</string>
     <string name="fjuro">Fjuro</string>
     <string name="croxz900">Croxz</string>
     <string name="croxz900_summary">Turečtina</string>
