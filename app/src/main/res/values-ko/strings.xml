@@ -171,4 +171,7 @@
     <string name="overview_saturday">토</string>
     <string name="overview_sunday">일</string>
     <string name="label_translators">번역가</string>
+    <string name="setup_app_data_usage_alert">앱 데이터 사용량 경고</string>
+    <string name="network_diagnostics">진단</string>
+    <string name="label_days_remaining">%1$s일 남음</string>
 </resources>
