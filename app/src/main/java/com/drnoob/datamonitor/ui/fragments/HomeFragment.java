@@ -30,6 +30,7 @@ import static com.drnoob.datamonitor.core.Values.DATA_PLAN_FRAGMENT;
 import static com.drnoob.datamonitor.core.Values.DATA_QUOTA;
 import static com.drnoob.datamonitor.core.Values.DATA_QUOTA_PERFORMED_RESET;
 import static com.drnoob.datamonitor.core.Values.DATA_QUOTA_SCHEDULED_RESET;
+import static com.drnoob.datamonitor.core.Values.DATA_QUOTA_WARNING_SHOWN;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_END;
@@ -158,6 +159,8 @@ public class HomeFragment extends Fragment implements View.OnLongClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+
         dataPlanLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                     @Override
@@ -166,10 +169,8 @@ public class HomeFragment extends Fragment implements View.OnLongClickListener {
                             snackbar = Snackbar.make(getActivity().findViewById(R.id.main_root),
                                             getString(R.string.label_data_plan_saved), Snackbar.LENGTH_SHORT)
                                     .setAnchorView(getActivity().findViewById(R.id.bottomNavigationView));
-                            if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                    .getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
-                                if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                        .getBoolean("auto_update_data_plan", false)) {
+                            if (preferences.getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
+                                if (preferences.getBoolean("auto_update_data_plan", false)) {
                                     setRefreshAlarm(requireContext());
                                 } else {
                                     setDataPlanNotification(requireContext());
@@ -184,19 +185,19 @@ public class HomeFragment extends Fragment implements View.OnLongClickListener {
                             Intent intent = new Intent(getContext(), DataUsageWidget.class);
                             intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
                             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
-                            boolean updateNotification = PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("setup_notification", false);
+                            boolean updateNotification = preferences.getBoolean("setup_notification", false);
                             if (updateNotification) {
                                 Intent notificationIntent = new Intent(getContext(), NotificationService.NotificationUpdater.class);
                                 getContext().sendBroadcast(notificationIntent);
                             }
+
+                            preferences.edit().putBoolean(DATA_QUOTA_WARNING_SHOWN, false).apply();
 
                             getContext().sendBroadcast(intent);
                         }
                     }
                 }
         );
-
-        preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
     }
 
     @Override

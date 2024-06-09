@@ -30,6 +30,7 @@ import static com.drnoob.datamonitor.Common.showAlarmPermissionDeniedDialog;
 import static com.drnoob.datamonitor.core.Values.APP_DATA_LIMIT_FRAGMENT;
 import static com.drnoob.datamonitor.core.Values.DATA_LIMIT;
 import static com.drnoob.datamonitor.core.Values.DATA_PLAN_FRAGMENT;
+import static com.drnoob.datamonitor.core.Values.DATA_QUOTA_WARNING_SHOWN;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_DAILY;
@@ -66,6 +67,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -146,6 +148,8 @@ public class SetupFragment extends Fragment {
         private Intent liveNetworkMonitorIntent;
         private ActivityResultLauncher<Intent> dataPlanLauncher;
 
+        private SharedPreferences preferences;
+
         @Override
         public void onAttach(@NonNull Context context) {
             super.onAttach(context);
@@ -172,10 +176,8 @@ public class SetupFragment extends Fragment {
                                 refreshDataPlanSettingsVisibility();
                                 refreshQuotaAlertVisibility();
                                 updateDailyQuota();
-                                if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                        .getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
-                                    if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                            .getBoolean("auto_update_data_plan", false)) {
+                                if (preferences.getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
+                                    if (preferences.getBoolean("auto_update_data_plan", false)) {
                                         setRefreshAlarm(requireContext());
                                     }
                                     else {
@@ -195,6 +197,8 @@ public class SetupFragment extends Fragment {
                                     Intent notificationIntent = new Intent(getContext(), NotificationUpdater.class);
                                     getContext().sendBroadcast(notificationIntent);
                                 }
+
+                                preferences.edit().putBoolean(DATA_QUOTA_WARNING_SHOWN, false).apply();
 
                                 getContext().sendBroadcast(intent);
                             }
@@ -235,6 +239,7 @@ public class SetupFragment extends Fragment {
 
             liveNetworkMonitorIntent = new Intent(getContext(), LiveNetworkMonitor.class);
 
+            preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
 
             int widgetRefreshInterval = PreferenceManager.getDefaultSharedPreferences(getContext())
                     .getInt(WIDGET_REFRESH_INTERVAL, 60000);
@@ -908,8 +913,7 @@ public class SetupFragment extends Fragment {
             mAutoUpdateDataPlan.setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(@NonNull androidx.preference.Preference preference) {
-                    boolean isChecked = PreferenceManager.getDefaultSharedPreferences(requireContext())
-                            .getBoolean("auto_update_data_plan", false);
+                    boolean isChecked = preferences.getBoolean("auto_update_data_plan", false);
                     cancelDataPlanNotification(requireContext());
                     if (isChecked) {
                         setRefreshAlarm(requireContext());
@@ -1175,8 +1179,7 @@ public class SetupFragment extends Fragment {
 
                                 dialog.dismiss();
 
-                                if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                        .getBoolean("data_usage_alert", false)) {
+                                if (preferences.getBoolean("data_usage_alert", false)) {
                                     DataUsageMonitor.updateServiceRestart(requireContext());
                                 }
 
@@ -1312,8 +1315,7 @@ public class SetupFragment extends Fragment {
 
                                 dialog.dismiss();
 
-                                if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                                        .getBoolean("data_usage_alert", false)) {
+                                if (preferences.getBoolean("data_usage_alert", false)) {
                                     DataUsageMonitor.updateServiceRestart(requireContext());
                                 }
 
@@ -1658,8 +1660,7 @@ public class SetupFragment extends Fragment {
         }
 
         private void refreshDataPlanSettingsVisibility() {
-            if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                    .getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
+            if (preferences.getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
                 mAutoUpdateDataPlan.setVisible(true);
                 mUsageResetTime.setVisible(false);
             }
@@ -1670,10 +1671,8 @@ public class SetupFragment extends Fragment {
         }
 
         private void refreshQuotaAlertVisibility() {
-            if (PreferenceManager.getDefaultSharedPreferences(requireContext())
-                    .getString(DATA_RESET, "null").equals(DATA_RESET_MONTHLY) ||
-                    PreferenceManager.getDefaultSharedPreferences(requireContext())
-                            .getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
+            if (preferences.getString(DATA_RESET, "null").equals(DATA_RESET_MONTHLY) ||
+                    preferences.getString(DATA_RESET, "null").equals(DATA_RESET_CUSTOM)) {
                 if (PreferenceManager.getDefaultSharedPreferences(getContext())
                         .getBoolean("smart_data_allocation", false)) {
                     mDailyQuotaAlert.setVisible(true);
