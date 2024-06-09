@@ -189,22 +189,6 @@ class SmartDataAllocationService(context: Context, workerParams: WorkerParameter
                 ExistingPeriodicWorkPolicy.KEEP,
                 dataRolloverWorkRequest
             )
-
-            if (planType != DATA_RESET_DAILY) {
-                getResetTimeDelay()?.let { time ->
-                    val quotaResetWorkRequest = OneTimeWorkRequest
-                        .Builder(DataRolloverHelper.QuotaRefreshHelper::class.java)
-                        .addTag("quota_reset")
-                        .setInitialDelay(time, TimeUnit.MILLISECONDS)
-                        .build()
-
-                    workManager.enqueueUniqueWork(
-                        "quota_reset",
-                        ExistingWorkPolicy.REPLACE,
-                        quotaResetWorkRequest
-                    )
-                }
-            }
         }
 
         return Result.success()
