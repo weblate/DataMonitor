@@ -32,6 +32,7 @@ import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_RESTART;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_START;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_START_HOUR;
 import static com.drnoob.datamonitor.core.Values.DATA_RESET_CUSTOM_DATE_START_MIN;
+import static com.drnoob.datamonitor.core.Values.DATA_RESET_DAILY;
 import static com.drnoob.datamonitor.core.Values.DEFAULT_NOTIFICATION_GROUP;
 import static com.drnoob.datamonitor.core.Values.INTENT_ACTION;
 import static com.drnoob.datamonitor.core.Values.OTHER_NOTIFICATION_CHANNEL_ID;
@@ -48,6 +49,9 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.preference.PreferenceManager;
+import androidx.work.ExistingWorkPolicy;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
 
 import com.drnoob.datamonitor.R;
 import com.drnoob.datamonitor.ui.activities.MainActivity;
@@ -129,6 +133,7 @@ public class DataPlanRefreshReceiver extends BroadcastReceiver {
                 .apply();
 
         Log.d(TAG, "refreshDataPlan: plan refreshed! next refresh: " + end);
+        refreshSmartDataAllocation(context);
         setRefreshAlarm(context);
         postDataRefreshNotification(context);
     }
@@ -147,5 +152,22 @@ public class DataPlanRefreshReceiver extends BroadcastReceiver {
                 .setContentIntent(pendingIntent);
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(context);
         postNotification(context, managerCompat, builder, OTHER_NOTIFICATION_ID);
+    }
+    
+    private void refreshSmartDataAllocation(Context context) {
+        Log.d(TAG, "refreshSmartDataAllocation: refreshing smart data allocation values.");
+        String planType = PreferenceManager.getDefaultSharedPreferences(context).getString(DATA_RESET, "null");
+        if (!planType.equals(DATA_RESET_DAILY) && !planType.equals("null")) {
+            OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(DataRolloverHelper.QuotaRefreshHelper.class)
+                    .addTag("quota_reset")
+                    .build();
+            
+            WorkManager workManager = WorkManager.getInstance(context);
+            workManager.enqueueUniqueWork(
+                    "quota_reset",
+                    ExistingWorkPolicy.REPLACE,
+                    request
+            );
+        }
     }
 }
