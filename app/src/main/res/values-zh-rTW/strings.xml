@@ -156,7 +156,7 @@
     <string name="body_data_warning_notification">您已超過 %1$d%% 資料限制</string>
     <string name="body_app_data_warning_notification">%1$s 已用完資料配額</string>
     <string name="title_data_usage_notification">今日資料用量 ：%1$s</string>
-    <string name="body_data_usage_notification_loading">載入中...</string>
+    <string name="body_data_usage_notification_loading">載入中…</string>
     <string name="label_data_remaining">剩餘 %1$s</string>
     <string name="label_data_remaining_used_excess">超出 %1$s</string>
     <string name="disable_battery_optimisation">關閉電池最佳化</string>
