@@ -367,7 +367,6 @@
     <string name="graphixmedia_summary">Flemenkçe</string>
     <string name="atharvshinde_summary">Geliştirici</string>
     <string name="atharvshinde">Atharv Shinde</string>
-    <string name="graphixmedia"></string>
     <string name="atharvshinde_translation_summary">Marathi</string>
     <string name="label_custom_start_time">Başlangıç Zamanı: %1$s</string>
     <string name="action_save">Kaydet</string>
@@ -422,9 +421,7 @@
     <string name="label_plan_details_title_unknown">Bilinmeyen plan aktif</string>
     <string name="label_plan_details_title_monthly">Aylık plan aktif</string>
     <string name="buttercookie42_summary">Geliştirici</string>
-    <string name="buttercookie42"></string>
     <string name="flix_summary">Almanca</string>
-    <string name="flix"></string>
     <string name="xxx_summary">Rusça</string>
     <string name="ofermar">teklif</string>
     <string name="ofermar_summary">İbranice</string>
@@ -440,19 +437,12 @@
     <string name="app_contributors_summary">Uygulamanın geliştirilmesine katkıda bulunanların bir listesi.</string>
     <string name="rintan_summary">Japonca</string>
     <string name="jonnysemon_summary">Arapça</string>
-    <string name="timtcg"></string>
     <string name="timtcg_summary">Vietnamca</string>
     <string name="chin_housin_summary">Basitleştirilmiş Çince</string>
     <string name="detrimental_god">Zararlı Tanrı</string>
-    <string name="chin_housin"></string>
     <string name="label_welcome_header">Data Monitor\'e hoş geldin</string>
     <string name="label_plan_details_title_daily">Günlük plan aktif</string>
     <string name="label_plan_details_title_custom">Özel plan aktif</string>
-    <string name="xxx"></string>
-    <string name="rezaalmanda"></string>
-    <string name="gnu_ewm"></string>
-    <string name="rintan"></string>
-    <string name="jonnysemon"></string>
     <string name="fjuro_summary">Çek</string>
     <string name="auto_update_data_plan_summary">Veri planını benzeri ile otomatik olarak güncelle.</string>
     <string name="label_days_remaining">%1$s gün kaldı</string>
@@ -471,6 +461,4 @@
     <string name="ecogaming_summary">Geliştirici</string>
     <string name="zahiruddinrushdi_summary">Malayca</string>
     <string name="jean_mareilles_summary">Fransızca</string>
-    <string name="zahiruddinrushdi"></string>
-    <string name="jean_mareilles"></string>
 </resources>
