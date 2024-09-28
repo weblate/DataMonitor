@@ -52,7 +52,7 @@
     <string name="title_widget_setup">Widget beállítása</string>
     <string name="widget_setup_step_1">1. Érintsen meg és tartson lenyomva egy üres helyet a kezdőképernyőn.</string>
     <string name="widget_setup_step_2">2. Koppintson a \"Widget\"-ekre.</string>
-    <string name="widget_setup_step_3">"3. Húzza a  Data Monitor widgetet kezdőképernyőjére."</string>
+    <string name="widget_setup_step_3">3. Húzza a Data Monitor widgetet kezdőképernyőjére.</string>
     <string name="heading_data_usage_today">Mai adathasználat</string>
     <string name="action_add_data_plan_home">Adja hozzá adatforgalmi csomagját a felügyelet megkezdéséhez</string>
     <string name="heading_week_overview">Heti áttekintés</string>
@@ -231,7 +231,7 @@
     <string name="error_invaliid_url">Érvénytelen letöltési URL-cím!</string>
     <string name="error_url_verification_failed">Nem lehet ellenőrizni az URL-t! Kérjük, próbálja meg újra, vagy használjon másikat.</string>
     <string name="error_invalid_plan">Érvénytelen csomag!</string>
-    <string name="label_send_report">Jelentés küldése a következővel:</string>
+    <string name="label_send_report">Jelentés küldése</string>
     <string name="label_permission_denied">Engedély megtagadva!</string>
     <string name="disable_haptics_summary">Haptikus visszajelzés letiltása az alkalmazásban</string>
     <string name="settings_disable_haptics">Haptikus visszajelzések letiltása</string>
@@ -239,7 +239,7 @@
     <string name="label_plan_end_date">Válassza ki a befejezés dátumát</string>
     <string name="combine_notifications">Értesítések kombinálása</string>
     <string name="combined_notification_icon">Kombinált értesítési ikon</string>
-    <string name="combined_notification_icon_summary">Válassza ki a kombinált értesítéshez megjeleníteni kívánt ikont.</string>
+    <string name="combined_notification_icon_summary">Válassza ki a kombinált értesítéshez megjeleníteni kívánt ikont</string>
     <string name="error_combine_notifications_enabled">Kombinált értesítés engedélyezve. Nem lehet letiltani az egyéni értesítést.</string>
     <string name="option_1_sec">Minden másodpercben</string>
     <string name="option_15_sec">15 másodperc</string>
@@ -302,7 +302,7 @@
     <string name="always_show_total">Mindig mutassa a teljes adatot</string>
     <string name="app_label_combined_total">Teljes adathasználat: %1$s</string>
     <string name="error_alarm_permission_denied">Riasztási engedély megtagadva!</string>
-    <string name="error_alarm_permission_denied_feature_summary">Ezt a funkciót nem használhatja a SCHEDULE_EXACT_ALARM engedély megadása nélkül.</string>
+    <string name="error_alarm_permission_denied_feature_summary">Ezt a funkciót nem használhatja a Riasztások és emlékeztetők engedély megadása nélkül.</string>
     <string name="label_do_not_show_again">Ne jelenjen meg többé</string>
     <string name="fjuro">Fjuro</string>
     <string name="fjuro_summary">Cseh</string>
@@ -311,7 +311,7 @@
     <string name="ngocanhtve_summary">Vietnámi</string>
     <string name="bluehomewu">EdwardWu</string>
     <string name="bluehomewu_summary">Hagyományos kínai</string>
-    <string name="data_plan_updated_summary">Az új csomagja %1$s-ig érvényes.</string>
+    <string name="data_plan_updated_summary">Az új csomagja %1$s-ig érvényes</string>
     <string name="wall_of_thanks">Köszönőfal</string>
     <string name="app_contributors">Alkalmazás közreműködők</string>
     <string name="label_thank_you">Köszönjük</string>
@@ -367,11 +367,11 @@
     <string name="label_current_data_warning_trigger_level_limit_not_set">Jelenlegi kiváltási szint: %1$s%%</string>
     <string name="label_data_trigger_level">Amikor az adatok %1$s%%-át felhasználják</string>
     <string name="app_contributors_summary">Az alkalmazás fejlesztését támogató közreműködők listája.</string>
-    <string name="label_want_to_contribute">"Kattintson ide, ha meg szeretné tudni, hogyan járulhat hozzá a  Data Monitor-hoz."</string>
+    <string name="label_want_to_contribute">Kattintson ide, ha meg szeretné tudni, hogyan járulhat hozzá a Data Monitor-hoz.</string>
     <string name="label_loading_apps">Alkalmazások betöltése</string>
     <string name="monthly">Havonta</string>
     <string name="option_1_min">1 perc</string>
-    <string name="setup_image_footer">"A widgetek és/vagy az értesítések egyszerű hozzáférést biztosítanak a felhasznált  adatmennyiséghez"</string>
+    <string name="setup_image_footer">A widgetek és/vagy az értesítések egyszerű hozzáférést biztosítanak a felhasznált adatmennyiséghez</string>
     <string name="option_15_min">15 perc</string>
     <string name="label_app_data_usage_session_empty">Nincs elérhető adat</string>
     <string name="option_5_min">5 perc</string>
@@ -439,7 +439,7 @@
 \nKészülék kódneve
 \nAndroid verziója</string>
     <string name="label_mail">E-mail</string>
-    <string name="battery_optimisation_enabled_info">"Az akkumulátor-optimalizálás engedélyezve van.  Ez zavarja a Data Monitor működését."</string>
+    <string name="battery_optimisation_enabled_info">Az akkumulátor-optimalizálás engedélyezve van. Ez zavarja a Data Monitor működését.</string>
     <string name="label_battery_optimisation">Akkumulátor-optimalizálás</string>
     <string name="error_no_crash_logs">Nem találtunk összeomlásnaplót. Biztos, hogy összeomlás történt?</string>
     <string name="settings_diagnostics_server">Kiszolgáló</string>
@@ -459,10 +459,10 @@
     <string name="Master2050_summary">Hagyományos kínai, Portugál, Francia, Norvég bokmål, Spanyol, Német, Román, Koreai, Török, Egyszerűsített kínai, Ukrán, Hindi, Orosz, Arab</string>
     <string name="U1M450W_summary">Üzbég</string>
     <string name="always_show_total_summary">A kiválasztott beállításoktól függetlenül mindig a teljes felhasznált adatot jeleníti meg az értesítésben.</string>
-    <string name="error_alarm_permission_denied_dialog_summary">Az adatmonitornak SCHEDULE_EXACT_ALARM engedélyre van szüksége a megfelelő működéshez. Az alkalmazást továbbra is használhatja, de egyes funkciói nem működhetnek megfelelően.</string>
+    <string name="error_alarm_permission_denied_dialog_summary">Az adatmonitornak Riasztások és emlékeztetők engedélyre van szüksége a megfelelő működéshez. Az alkalmazást továbbra is használhatja, de egyes funkciói nem működhetnek megfelelően.</string>
     <string name="atharvshinde_summary">Fejlesztő</string>
     <string name="hinamechan_summary">Török</string>
-    <string name="error_alarm_permission_denied_summary">Ön olyan műveletet próbált végrehajtani, amelyhez a SCHEDULE_EXACT_ALARM engedély szükséges, amely nincs megadva az alkalmazásnak. Kattintson ide az engedély megadásához.</string>
+    <string name="error_alarm_permission_denied_summary">Ön olyan műveletet próbált végrehajtani, amelyhez a Riasztások és emlékeztetők engedély szükséges, amely nincs megadva az alkalmazásnak. Kattintson ide az engedély megadásához.</string>
     <string name="ngocanhtve">ngocanhtve</string>
     <string name="dan_summary">Ukrán</string>
     <string name="zahiruddinrushdi_summary">Maláj</string>

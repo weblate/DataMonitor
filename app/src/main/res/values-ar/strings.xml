@@ -4,7 +4,7 @@
     <string name="appwidget_text">مثال</string>
     <string name="add_widget">إضافة أداة</string>
     <string name="notification_mobile_data_usage">"بيانات الجوال: %1$s"</string>
-    <string name="notification_wifi_data_usage">واي فاي: %1$s</string>
+    <string name="notification_wifi_data_usage">Wi-Fi: %1$s</string>
     <string name="home_mobile_data_sent">%1$s 
 \nأرسلت</string>
     <string name="home_mobile_data_received">%1$s 
@@ -19,7 +19,7 @@
     <string name="app_label_package_name">"اسم الحزمة: %1$s"</string>
     <string name="app_label_uid">"المعرف الفريد: %1$d"</string>
     <string name="app_name_placeholder">"اسم التطبيق"</string>
-    <string name="app_data_usage_placeholder">0 ميجا بايت</string>
+    <string name="app_data_usage_placeholder">0 ميجابايت</string>
     <string name="label_sent">"أرسلت"</string>
     <string name="label_received">"تلقيت"</string>
     <string name="action_open_app_settings">"فتح إعدادات التطبيق"</string>
@@ -34,10 +34,10 @@
     <string name="label_all_time">كل الأوقات</string>
     <string name="title_app_data_usage_type">"اختر صنف"</string>
     <string name="label_mobile_data">"بيانات الجوال"</string>
-    <string name="label_wifi">"واي فاي"</string>
+    <string name="label_wifi">Wi-Fi</string>
     <string name="title_data_usage">استهلاك البيانات</string>
     <string name="action_update">"تحديث"</string>
-    <string name="data_remaining_placeholder">"يتبقى 0.00 جيجا بايت"</string>
+    <string name="data_remaining_placeholder">يتبقى 0.00 جيجابايت</string>
     <string name="label_dev">صنع بـ ❤ بواسطة Bitroid</string>
     <string name="label_loading_apps">جارِ تحميل التطبيقات</string>
     <string name="label_app_data_usage_session_empty">لا تتوافر بيانات</string>
@@ -47,8 +47,8 @@
     <string name="daily">يوميًا</string>
     <string name="monthly">شهريًا</string>
     <string name="heading_data_limit">"حد البيانات"</string>
-    <string name="data_type_mb">"ميغا بايت"</string>
-    <string name="data_type_gb">"غيغا بايت"</string>
+    <string name="data_type_mb">ميغابايت</string>
+    <string name="data_type_gb">غيغابايت</string>
     <string name="title_data_warning_trigger">"مستوى تشغيل تحذير البيانات"</string>
     <string name="title_add_data_plan">"أضف خطة بيانات"</string>
     <string name="title_refresh_interval">"حدد الفاصل الزمني للتحديث"</string>
@@ -79,7 +79,7 @@
     <string name="setup_notification_title">إشعار</string>
     <string name="setup_notification_refresh_interval">الفاصل الزمني لتحديث الإشعارات</string>
     <string name="setup_show_mobile_usage">"إظهار استخدام بيانات الجوال"</string>
-    <string name="setup_show_wifi_usage">"عرض استخدام واي فاي"</string>
+    <string name="setup_show_wifi_usage">عرض استخدام Wi-Fi</string>
     <string name="monitor_data">راقب استهلاك البيانات</string>
     <string name="setup_data_alert">"إخطار استخدام البيانات"</string>
     <string name="data_alert_summary">"يتم إخطارك عندما يتم الوصول إلى حد البيانات"</string>
@@ -286,7 +286,7 @@
     <string name="error_invaliid_url">عنوان URL للتنزيل غير صالح!</string>
     <string name="license_summary">عرض تراخيص التطبيق</string>
     <string name="hudaifa_abdullah_summary">العربيّة</string>
-    <string name="network_diagnostics_info">قد تستخدم تشخيصات الشبكة حوالي 20-30 ميغا بايت من البيانات. تأكد من توفر هذا في خطتك ، وإلا فقد يتم تطبيق رسوم الشبكة.</string>
+    <string name="network_diagnostics_info">قد تستخدم تشخيصات الشبكة حوالي 20-30 ميغابايت من البيانات. تأكد من توفر هذا في خطتك، وإلا فقد يتم تطبيق رسوم الشبكة.</string>
     <string name="label_send_report">إرسال التقرير عبر</string>
     <string name="label_permission_denied">تم رفض الإذن!</string>
     <string name="notification_permission_denied_body">لن تعمل الميزات بما في ذلك إشعار مراقبة البيانات وسرعة الشبكة الحية وتنبيه استخدام البيانات بشكل صحيح دون إذن الإشعار. يرجى منحها يدويًا.</string>

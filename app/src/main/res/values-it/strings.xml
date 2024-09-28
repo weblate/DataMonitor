@@ -276,7 +276,7 @@
     <string name="label_changelogs">Scopri le novità</string>
     <string name="update_fetch_error">Impossibile recuperare gli aggiornamenti</string>
     <string name="label_update_available">Una nuova versione è disponibile!</string>
-    <string name="label_download_update">Scarica la nuova versione</string>
+    <string name="label_download_update">Scarica aggiornamento</string>
     <string name="checking_for_update">Controllo degli aggiornamenti…</string>
     <string name="new_update_available">Una nuova versione è disponibile!</string>
     <string name="theme_dark">Scuro</string>
@@ -315,7 +315,7 @@
     <string name="label_copy_logs">Copia i registri</string>
     <string name="settings_network_diagnostics">Diagnostica di rete</string>
     <string name="label_crash_logs_copied">Registri degli arresti anomali copiati negli appunti</string>
-    <string name="battery_optimisation_enabled_info">L\'ottimizzazione della batteria è attivata. Ciò interferisce con il funzionamento di Data Monitor. Fare clic per disattivarla.</string>
+    <string name="battery_optimisation_enabled_info">L\'ottimizzazione della batteria è attivata. Ciò interferisce con il funzionamento di Data Monitor.</string>
     <string name="network_diagnostics_summary">Cambia server di diagnostica</string>
     <string name="settings_download_server">Server scaricamento</string>
     <string name="settings_diagnostics_server">Server</string>
@@ -368,4 +368,23 @@
     <string name="shailendramaurya">Shailendra Maurya</string>
     <string name="iqb4lsp_summary">Indonesiano</string>
     <string name="report_telegram_summary">Inviate la segnalazione dell\'arresto anomalo nella chat di supporto di Telegram</string>
+    <string name="label_custom_end_time">Ora fine: %1$s</string>
+    <string name="error_network_monitor_start">Avvio di Network Monitor fallito. Apri l\'app per aggiornare.</string>
+    <string name="label_custom_start_time">Ora inizio: %1$s</string>
+    <string name="action_save">Salva</string>
+    <string name="error_invalid_plan_duration">Durata piano non valida</string>
+    <string name="donate_info">Data Monitor è un\'applicazione gratis ed Open-Source e rimarrà sempre tale.
+\n
+\nSe vuoi supportare lo sviluppo dell\'app, una donazione sarebbe molto apprezzata.</string>
+    <string name="label_paypal">PayPal</string>
+    <string name="paypal_summary">Dona via PayPal</string>
+    <string name="label_upi">BHIM-UPI</string>
+    <string name="upi_summary">Dona via UPI</string>
+    <string name="buymeacoffee_summary">Offrimi un caffè :)</string>
+    <string name="tadekdudek_summary">Polacco</string>
+    <string name="label_days_remaining">%1$s giorni rimasti</string>
+    <string name="label_buymeacoffee">Offrimi un caffè</string>
+    <string name="label_filter_app_usage">Filtra utilizzo app</string>
+    <string name="label_filter">Filtro</string>
+    <string name="label_current_plan">Piano corrente</string>
 </resources>

@@ -127,7 +127,7 @@ Perguntas e respostas, ajuda e solução de problemas
     <string name="eth_address_copied">Endereço da carteira Ethereum copiado para a área de transferência</string>
     <string name="ltc_address_copied">Endereço da carteira de Litecoin copiado para a área de transferência</string>
     <string name="label_system_apps">Aplicativos do Sistema</string>
-    <string name="home">"Casa"</string>
+    <string name="home">Início</string>
     <string name="usage_access_permission">"Permissão de acesso ao uso"</string>
     <string name="usage_access_body">Necessário para executar o aplicativo, uma vez que ele coleta estatísticas de uso do aplicativo.
 \nNenhum dado pessoal é coletado.</string>

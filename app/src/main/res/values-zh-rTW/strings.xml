@@ -140,7 +140,7 @@
     <string name="label_widget_refresh_interval_change">小工具將每 %1$s 更新</string>
     <string name="label_notification_refresh_interval_change">通知將每 %1$s 更新</string>
     <string name="label_data_usage_reset_time_change">在每 %1$s %2$s 將會重設數據使用量</string>
-    <string name="label_data_usage_reset_date_change">數據使用量會在每個月 %1s 被重設</string>
+    <string name="label_data_usage_reset_date_change">數據使用量會在每個月%1$s日被重設</string>
     <string name="remaining_data_info_enabled">剩餘流量資訊已啟用</string>
     <string name="remaining_data_info_disabled">剩餘流量資訊已停用</string>
     <string name="label_monitoring_no_plan">新增一個流量使用計劃以繼續</string>
@@ -156,7 +156,7 @@
     <string name="body_data_warning_notification">您已超過 %1$d%% 資料限制</string>
     <string name="body_app_data_warning_notification">%1$s 已用完資料配額</string>
     <string name="title_data_usage_notification">今日資料用量 ：%1$s</string>
-    <string name="body_data_usage_notification_loading">載入中...</string>
+    <string name="body_data_usage_notification_loading">載入中…</string>
     <string name="label_data_remaining">剩餘 %1$s</string>
     <string name="label_data_remaining_used_excess">超出 %1$s</string>
     <string name="disable_battery_optimisation">關閉電池最佳化</string>
