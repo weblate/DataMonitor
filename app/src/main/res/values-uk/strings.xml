@@ -269,7 +269,7 @@
     <string name="eth_address_copied">Адреса гаманця Ethereum скопійована в буфер обміну</string>
     <string name="btc_address_copied">Адреса гаманця Bitcoin скопійована в буфер обміну</string>
     <string name="oem_skin_warning">%1$s Будь ласка, перевірте додаткові поради щодо оптимізації, щоб застосунок працював правильно.</string>
-    <string name="label_removed">Віддалені застосунки</string>
+    <string name="label_removed">Видалені застосунки</string>
     <string name="label_no_additional_lang">Натисніть тут, щоб допомогти перекласти застосунок.</string>
     <string name="label_notification_refresh_interval_change">Повідомлення буде оновлюватися кожні %1$s</string>
     <string name="ygorigor_summary">Румунська</string>
