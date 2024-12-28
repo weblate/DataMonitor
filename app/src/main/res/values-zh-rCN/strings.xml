@@ -313,7 +313,7 @@
     <string name="label_send_report">通过以下方式发送报告</string>
     <string name="label_custom_server_save_success">服务器首选项已保存</string>
     <string name="combine_notifications">合并通知</string>
-    <string name="combined_notification_icon">通知已合并图标</string>
+    <string name="combined_notification_icon">合并通知图标</string>
     <string name="combined_notification_icon_summary">选择显示合并通知的图标</string>
     <string name="combine_notifications_summary">将数据监视器和网络速度合并为一个通知。</string>
     <string name="date">日期</string>
@@ -424,4 +424,15 @@
     <string name="error_alarm_permission_denied_feature_summary">您不能在没有授予闹钟和提醒权限的情况下使用此功能。</string>
     <string name="ngocanhtve_summary">越南语</string>
     <string name="error_alarm_permission_denied_dialog_summary">Data Monitor 需要闹钟和提醒权限才能正常工作。您仍然可以使用该应用程序，但某些功能可能无法正常工作。</string>
+    <string name="error_combine_notifications_enabled">已启用合并通知，无法禁用单个通知。</string>
+    <string name="label_days_remaining">%1$s 剩余天数</string>
+    <string name="option_1_sec">每秒</string>
+    <string name="option_15_sec">15 秒</string>
+    <string name="option_30_sec">30 秒</string>
+    <string name="lockscreen_notification">在锁屏界面上启用通知</string>
+    <string name="exclude_apps">排除应用</string>
+    <string name="exclude_apps_summary">从使用数据中排除应用流量</string>
+    <string name="action_add_application">添加应用</string>
+    <string name="label_no_apps_added">未添加任何应用，单击下面的按钮添加应用。</string>
+    <string name="title_app_picker">选择应用</string>
 </resources>
